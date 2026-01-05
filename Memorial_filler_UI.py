@@ -42,10 +42,10 @@ opcoes_inv = ["Growatt NEO 2250M-X2", "Sungrow", "Hoymiles MI-1500/700", "Hyxipo
 inv_sel = st.selectbox("Escolha o tipo de inversor:", opcoes_inv)
 tipo_inv = opcoes_inv.index(inv_sel) + 1
 
-nome = st.text_input("Nome: ")
+#nome = st.text_input("Nome: ")
 arquivo_pdf = st.file_uploader("Upload do PDF:", type="pdf")
 
-if arquivo_pdf and nome:
+if arquivo_pdf:
     with pdfplumber.open(arquivo_pdf) as pdf:
         first_page = pdf.pages[0]
         pdf_text = first_page.extract_text()
@@ -221,4 +221,5 @@ if arquivo_pdf and nome:
                 mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
             )
         except Exception as e:
+
             st.error(f"Erro: {e}")
