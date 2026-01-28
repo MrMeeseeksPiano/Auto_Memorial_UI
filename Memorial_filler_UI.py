@@ -200,7 +200,11 @@ if arquivo_pdf:
     elif tipo_inv == 8: 
         dicionario.update(inversor_saj_r6_20k)
         inversor_escolhido = inversor_saj_r6_20k
-        imagem_inversor_placeholder = inversor_saj_r6_20k['Imagem_inversor']             
+        imagem_inversor_placeholder = inversor_saj_r6_20k['Imagem_inversor']
+    elif tipo_inv == 9: 
+        dicionario.update(inversor_Hoymiles_1200)
+        inversor_escolhido = inversor_Hoymiles_1200
+        imagem_inversor_placeholder = inversor_Hoymiles_1200['Imagem_inversor']              
 
     Pot_nom_com_virgula = float(dicionario['Pot_nom'].replace(',','.'))
     Pot_max_lista = gerador_escolhido['Pot_max'].rsplit(' ',1)
