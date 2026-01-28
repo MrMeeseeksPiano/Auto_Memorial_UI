@@ -42,7 +42,7 @@ opcoes_mod = ["Trina Solar 695W", "Canadian Solar", "Astronergy 375W", "Gokin 58
 mod_sel = st.selectbox("Escolha o tipo de módulo:", opcoes_mod)
 tipo_mod = opcoes_mod.index(mod_sel) + 1
 
-opcoes_inv = ["Growatt NEO 2250M-X2", "Sungrow", "Hoymiles MI-1500/700", "Hyxipower HYX-M2000-SW", "Solis 6 kW", "Hoymiles HMS-2000-4T", "Growatt NEO 2000M-X", "SAJ R6-20K-T3-32-LV","Hoymiles MI-1500"]
+opcoes_inv = ["Growatt NEO 2250M-X2", "Sungrow", "Hoymiles MI-1500/700", "Hyxipower HYX-M2000-SW", "Solis 6 kW", "Hoymiles HMS-2000-4T", "Growatt NEO 2000M-X", "SAJ R6-20K-T3-32-LV","Hoymiles MI-1200"]
 inv_sel = st.selectbox("Escolha o tipo de inversor:", opcoes_inv)
 tipo_inv = opcoes_inv.index(inv_sel) + 1
 
