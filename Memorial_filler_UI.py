@@ -250,7 +250,7 @@ if arquivo_pdf:
             st.download_button(
                 label="Baixar Memorial",
                 data=output_stream,
-                file_name=f"Memorial {Nome_capa}.docx",
+                file_name=f"Memorial Descritivo - {Nome_capa}.docx",
                 mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
             )
         except Exception as e:
