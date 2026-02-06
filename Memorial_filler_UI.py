@@ -47,6 +47,11 @@ opcoes_inv = ["Growatt NEO 2250M-X2", "Sungrow", "Hoymiles MI-1500/700", "Hyxipo
 inv_sel = st.selectbox("Escolha o tipo de inversor:", opcoes_inv)
 tipo_inv = opcoes_inv.index(inv_sel) + 1
 
+opcoes_estrutura = ["Parafuso Prisioneiro","Laje","Solo"]
+Estrutura_sel = st.selectbox("Tipo de estrutura:", opcoes_estrutura)
+tipo_estrutura = opcoes_estrutura.index(Estrutura_sel)
+
+
 #nome = st.text_input("Nome: ")
 arquivo_pdf = st.file_uploader("Upload do PDF:", type="pdf")
 
@@ -120,6 +125,9 @@ if arquivo_pdf:
     dicionario['Nome_login'] = Nome_login
     Senha_login = f'{Nomes[0][0]}{Nomes[-1][0]}123456'.lower()
     dicionario['Senha_login'] = Senha_login
+
+    #Tipo de estrutura
+    dicionario['Estrutura_tipo'] = opcoes_estrutura[tipo_estrutura]
 
     if tipo_mod == 1:
         dicionario.update(gerador_trina)
