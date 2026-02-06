@@ -40,11 +40,11 @@ inversor_Hoymiles_1200 = {'Fabricante_sigla': 'Hoymiles MI-1200','Entradas': '4'
 st.title("Gerador de Memorial Descritivo")
 
 opcoes_mod = ["Trina Solar 695W", "Canadian Solar", "Astronergy 375W", "Gokin 585W", "Hanersun 585W", "Gokin 700W", "Astronergy 600W", "ZnShine 700W", "Hanersun 610W", "Honor 700W", "Gokin 610W","Trina Solar 400W","Risen 700W"]
-mod_sel = st.selectbox("Escolha o tipo de módulo:", opcoes_mod)
+mod_sel = st.selectbox("Módulo:", opcoes_mod)
 tipo_mod = opcoes_mod.index(mod_sel) + 1
 
 opcoes_inv = ["Growatt NEO 2250M-X2", "Sungrow", "Hoymiles MI-1500/700", "Hyxipower HYX-M2000-SW", "Solis 6 kW", "Hoymiles HMS-2000-4T", "Growatt NEO 2000M-X", "SAJ R6-20K-T3-32-LV","Hoymiles MI-1200"]
-inv_sel = st.selectbox("Escolha o tipo de inversor:", opcoes_inv)
+inv_sel = st.selectbox("Inversor:", opcoes_inv)
 tipo_inv = opcoes_inv.index(inv_sel) + 1
 
 opcoes_estrutura = ["Parafuso Prisioneiro","Laje","Solo"]
