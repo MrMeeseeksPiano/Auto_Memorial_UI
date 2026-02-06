@@ -51,6 +51,10 @@ opcoes_estrutura = ["Parafuso Prisioneiro","Laje","Solo"]
 Estrutura_sel = st.selectbox("Tipo de estrutura:", opcoes_estrutura)
 tipo_estrutura = opcoes_estrutura.index(Estrutura_sel)
 
+opcoes_fornecimento = ["220 V","380 V"]
+fornecimento_sel = st.selectbox("Tipo de fornecimento:", opcoes_fornecimento)
+tipo_fornecimento = opcoes_fornecimento.index(fornecimento_sel)
+
 
 #nome = st.text_input("Nome: ")
 arquivo_pdf = st.file_uploader("Upload do PDF:", type="pdf")
@@ -128,6 +132,9 @@ if arquivo_pdf:
 
     #Tipo de estrutura
     dicionario['Estrutura_tipo'] = opcoes_estrutura[tipo_estrutura]
+
+    #Tipo de fornecimento
+    dicionario['Tipo_fornecimento'] = opcoes_fornecimento[tipo_fornecimento]
 
     if tipo_mod == 1:
         dicionario.update(gerador_trina)
