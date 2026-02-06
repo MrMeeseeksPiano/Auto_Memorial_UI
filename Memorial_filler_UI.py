@@ -47,7 +47,7 @@ opcoes_inv = ["Growatt NEO 2250M-X2", "Sungrow", "Hoymiles MI-1500/700", "Hyxipo
 inv_sel = st.selectbox("Inversor:", opcoes_inv)
 tipo_inv = opcoes_inv.index(inv_sel) + 1
 
-opcoes_estrutura = ["Parafuso Prisioneiro","Laje","Solo"]
+opcoes_estrutura = ["Parafuso Prisioneiro","Laje","Solo","Metálico"]
 Estrutura_sel = st.selectbox("Tipo de estrutura:", opcoes_estrutura)
 tipo_estrutura = opcoes_estrutura.index(Estrutura_sel)
 
