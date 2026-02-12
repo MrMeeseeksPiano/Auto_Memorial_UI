@@ -25,6 +25,7 @@ gerador_znshine_700 = {'Fabricante': 'ZNSHINE SOLAR','SIGLA': 'ZXM8-GPLD132-700W
 gerador_gokin_610 = {'Fabricante': 'GOKIN SOLAR','SIGLA': 'GK-4-66HTBD-610M-F','Tec_construcao': 'Monocristalino N-Type TOPCon Dual Glass (Bifacial)','Garantia': '15 anos','Pot_max': '610 W','Eficiencia': '22,6 %','Tensao_nom': '40,22 V','Tensao_aberto': '48,00 V','Corrente_nom': '15,18 A','Corrente_cc': '16,07 A','axlxp': '2382 x 1134 x 30 mm','Peso': '33,0 kg','Imagem_gerador': 'Imagens/Trina_gerador.jpg'}
 gerador_trina_400 = {'Fabricante':'Trina Solar','SIGLA':'TSM-400DE09','Tec_construcao':'Monocristalino','Garantia':'12 anos','Pot_max':'400 W','Eficiencia':'20,8 %','Tensao_nom':'34,2 V','Tensao_aberto':'41,2 V','Corrente_nom':'11,70 A','Corrente_cc':'12,28 A','axlxp':'1754 x 1096 x 30 mm','Peso':'21,0 kg','Imagem_gerador':'Imagens/Trina_gerador.jpg'}
 gerador_risen_700 = {'Fabricante':'Risen Energy','SIGLA':'RSM132-8-700BHDG','Tec_construcao':'Heterojunção (HJT)','Garantia':'15 anos','Pot_max':'700 W','Eficiencia':'22,5 %','Tensao_nom':'41,78 V','Tensao_aberto':'49,83 V','Corrente_nom':'16,77 A','Corrente_cc':'17,82 A','axlxp':'2384 x 1303 x 33 mm','Peso':'37,5 kg','Imagem_gerador':'Imagens/Trina_gerador.jpg'}
+gerador_honor_600 = {'Fabricante':'Honor Solar','SIGLA':'HY-M16/144H-600','Tec_construcao':'Monocristalino N-Type TOPCon','Garantia':'15 anos','Pot_max':'600 W','Eficiencia':'22,2 %','Tensao_nom':'43,90 V','Tensao_aberto':'52,34 V','Corrente_nom':'13,67 A','Corrente_cc':'14,53 A','axlxp':'2384 x 1134 x 30 mm','Peso':'28,2 kg','Imagem_gerador':'Imagens/Trina_gerador.jpg'}
 
 inversor_growatt2 = {'Fabricante_sigla': 'Growatt NEO 2000M-X','Entradas': '4','Monitoramento': 'SIM – Wireless','Pot_nom_max': '2 kW','Tensao_nom_freq': '220 V - 54/65 Hz','Tensao_max': '65 VCC','Tensao_saida': '160 – 285 V','Corrente_max_saida': '9,3 A','Eficiencia_max': '96,5 %','axlxp_inv': '396 × 300 × 45 mm','Peso_inv': '5 kg','Nome_inversor': 'Growatt','Link_inversor': 'https://server.growatt.com/login','App_inversor': 'ShinePhone','Imagem_inversor': 'Imagens/inversor_growatt_2kw.jpg'}
 inversor_growatt225 = {'Fabricante_sigla':'Growatt NEO 2250M-X2','Entradas':'4','Monitoramento':'SIM – Wireless','Pot_nom_max':'2.25 kW','Tensao_nom_freq':'35 V - 50/60 Hz','Tensao_max':'60 VCC','Tensao_saida':'220 V','Corrente_max_saida':'10,23 A','Eficiencia_max':'96,5%','axlxp_inv':'396*270*45 mm','Peso_inv':'5,1 kg','Nome_inversor':'Growatt','Link_inversor':'https://server.growatt.com/login','App_inversor':'ShinePhone','Imagem_inversor':'Imagens/inversor_growatt.jpg'}
@@ -39,7 +40,7 @@ inversor_Hoymiles_1200 = {'Fabricante_sigla': 'Hoymiles MI-1200','Entradas': '4'
 # --- INTERFACE STREAMLIT ---
 st.title("Gerador de Memorial Descritivo")
 
-opcoes_mod = ["Trina Solar 695W", "Canadian Solar", "Astronergy 375W", "Gokin 585W", "Hanersun 585W", "Gokin 700W", "Astronergy 600W", "ZnShine 700W", "Hanersun 610W", "Honor 700W", "Gokin 610W","Trina Solar 400W","Risen 700W"]
+opcoes_mod = ["Trina Solar 695W", "Canadian Solar", "Astronergy 375W", "Gokin 585W", "Hanersun 585W", "Gokin 700W", "Astronergy 600W", "ZnShine 700W", "Hanersun 610W", "Honor Solar 700W", "Gokin 610W","Trina Solar 400W","Risen 700W","Honor Solar 600W"]
 mod_sel = st.selectbox("Módulo:", opcoes_mod)
 tipo_mod = opcoes_mod.index(mod_sel) + 1
 
@@ -188,6 +189,10 @@ if arquivo_pdf:
         dicionario.update(gerador_risen_700)
         gerador_escolhido = gerador_risen_700
         imagem_gerador_placeholder = gerador_risen_700['Imagem_gerador']
+    elif tipo_mod == 14:
+        dicionario.update(gerador_honor_600)
+        gerador_escolhido = gerador_honor_600
+        imagem_gerador_placeholder = gerador_honor_600['Imagem_gerador']
 
     if tipo_inv == 1:
         dicionario.update(inversor_growatt225)
