@@ -73,12 +73,10 @@ for id_inv, inv in conteudo_inversores:
 conn.close()
 
 mod_sel = st.selectbox("Módulo:", opcoes_mod)
-tipo_mod = opcoes_mod.index(mod_sel) + 1
 id_gerador_escolhido = mapeamento_mod[mod_sel]
 print (f'esse é modsel {mod_sel}   esse é o resultado do mapeamento {mapeamento_mod}')
 
 inv_sel = st.selectbox("Inversor:", opcoes_inv)
-tipo_inv = opcoes_inv.index(inv_sel) + 1
 id_inversor_escolhido = mapeamento_inv[inv_sel]
 
 
