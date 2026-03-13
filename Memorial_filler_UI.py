@@ -44,7 +44,7 @@ energia_mensal = {
 irradiacao = [5.01, 5.5, 5.1, 5.46, 5.56, 5.61, 5.83, 6.47, 5.91, 5.45, 4.75, 4.98]
 mes = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-# --- INTERFACE STREAMLIT ---
+# Interface
 st.title("Gerador de Memorial Descritivo")
 
 conn = sqlite3.connect("equipamentos.db")
@@ -74,7 +74,6 @@ conn.close()
 
 mod_sel = st.selectbox("Módulo:", opcoes_mod)
 id_gerador_escolhido = mapeamento_mod[mod_sel]
-print (f'esse é modsel {mod_sel}   esse é o resultado do mapeamento {mapeamento_mod}')
 
 inv_sel = st.selectbox("Inversor:", opcoes_inv)
 id_inversor_escolhido = mapeamento_inv[inv_sel]
@@ -89,7 +88,6 @@ fornecimento_sel = st.selectbox("Tipo de fornecimento:", opcoes_fornecimento)
 tipo_fornecimento = opcoes_fornecimento.index(fornecimento_sel)
 
 
-# nome = st.text_input("Nome: ")
 arquivo_pdf = st.file_uploader("Upload do PDF:", type="pdf")
 
 if arquivo_pdf:
@@ -179,17 +177,8 @@ if arquivo_pdf:
     cursor1 = conn1.cursor()
     cursor1.execute("SELECT * FROM Inversores WHERE id = ? ", (id_inversor_escolhido,))
     resultado_inv = cursor1.fetchone()
-    # DEBUG: Isso vai aparecer no seu navegador
-    if resultado_inv is None:
-        st.error(f"O banco negou o Inversor! ID tentado: {id_inversor_escolhido}")
-        # Vamos listar os IDs que existem no banco pra conferir
-        cursor1.execute("SELECT id FROM Inversores")
-        ids_reais = [linha[0] for linha in cursor.fetchall()]
-        st.write(f"IDs que realmente existem no banco agora: {ids_reais}")
-        st.stop() # Para tudo aqui
-    else:
-        dicionario.update(dict(resultado_inv))
-    #dicionario.update(dict(resultado_inv))
+    dicionario.update(dict(resultado_inv))
+  
 
     cursor1.execute("SELECT * FROM Modulos WHERE id = ? ", (id_gerador_escolhido,))
     resultado_mod = cursor1.fetchone()
