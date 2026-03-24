@@ -1,20 +1,5 @@
 import sqlite3
 
-gerador_trina = {
-    "Fabricante": "Trina Solar",
-    "SIGLA": "TSM-695NEG21C.20",
-    "Tec_construcao": "Monocristalino",
-    "Garantia": "12 anos",
-    "Pot_max": "695 W",
-    "Eficiencia": "22,4 %",
-    "Tensao_nom": "40,3 V",
-    "Tensao_aberto": "48,3 V",
-    "Corrente_nom": "17,25 A",
-    "Corrente_cc": "18,28 A",
-    "axlxp": "2384 x 1303 x 33 mm",
-    "Peso": "38,3 kg",
-    "Imagem_gerador": "Imagens/Trina_gerador.jpg",
-}
 gerador_astronergy = {
     "Fabricante": "Astronergy",
     "SIGLA": "CHSM6612M/HV - 375W",
@@ -258,7 +243,6 @@ gerador_trina_695 = {
 }
 
 modulos = [
-    gerador_trina,
     gerador_astronergy,
     gerador_astronergy_600,
     gerador_canadian,
