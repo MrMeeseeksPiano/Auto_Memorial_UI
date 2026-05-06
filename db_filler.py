@@ -242,6 +242,38 @@ gerador_trina_695 = {
     "Imagem_gerador": "Imagens/Trina_gerador.jpg",
 }
 
+gerador_astronergy_570 = {
+    "Fabricante": "Astronergy", # [cite: 1]
+    "SIGLA": "CHSM72N(DG)/F-BH-570W", # [cite: 2, 56]
+    "Tec_construcao": "n-type mono-crystalline", # [cite: 47]
+    "Garantia": "15 anos", # [cite: 5]
+    "Pot_max": "570 W", # [cite: 56]
+    "Eficiencia": "22,1 %", # [cite: 56]
+    "Tensao_nom": "42,77 V", # [cite: 56]
+    "Tensao_aberto": "50,90 V", # [cite: 56]
+    "Corrente_nom": "13,33 A", # [cite: 56]
+    "Corrente_cc": "14,10 A", # [cite: 56]
+    "axlxp": "2278 x 1134 x 30 mm", # [cite: 47]
+    "Peso": "32,1 kg", # [cite: 47]
+    "Imagem_gerador": "Imagens/Trina_gerador.jpg",
+}
+
+gerador_hanersun_600 = {
+    "Fabricante": "Hanersun",
+    "SIGLA": "HN19RN-72H600W",
+    "Tec_construcao": "Monocristalino (182R) TOPCon",
+    "Garantia": "15 anos",
+    "Pot_max": "600 W",
+    "Eficiencia": "22,2 %",
+    "Tensao_nom": "44,0 V",
+    "Tensao_aberto": "51,8 V",
+    "Corrente_nom": "13,64 A",
+    "Corrente_cc": "14,54 A",
+    "axlxp": "2384 x 1134 x 30 mm",
+    "Peso": "29,5 kg",
+    "Imagem_gerador": "Imagens/Trina_gerador.jpg"
+}
+
 modulos = [
     gerador_astronergy,
     gerador_astronergy_600,
@@ -259,6 +291,8 @@ modulos = [
     gerador_hanersun_700,
     gerador_osda_610,
     gerador_trina_695,
+    gerador_astronergy_570,
+    gerador_hanersun_600,
 ]
 
 inversor_growatt2 = {
@@ -295,6 +329,7 @@ inversor_growatt225 = {
     "App_inversor": "ShinePhone",
     "Imagem_inversor": "Imagens/inversor_growatt.jpg",
 }
+
 inversor_Sungrow = {
     "Fabricante_sigla": "Sungrow SG3K-S",
     "Entradas": "1",
@@ -415,6 +450,45 @@ inversor_Hoymiles_1200 = {
     "App_inversor": "S-miles Enduser",
 }
 
+
+inversor_HYX_M1800_S = {
+"Fabricante_sigla": "Hyxipower HYX-M1800-S",
+"Entradas": "4",
+"Monitoramento": "SIM – Sub-1G / WiFi",
+"Pot_nom_max": "1,8 kW",
+"Tensao_nom_freq": "220/230 V - 50/60 Hz",
+"Tensao_max": "60 Vcc",
+"Tensao_saida": "163 - 278 V",
+"Corrente_max_saida": "7,83 A",
+"Eficiencia_max": "96,70 %",
+"axlxp_inv": "310*236*35.5mm",
+"Peso_inv": "5 kg",
+"Nome_inversor": "HYXIPOWER",
+"Imagem_inversor": "Imagens/inversor_hyxipower.jpg",
+"Link_inversor": "http://Hyxicloud.com",
+"App_inversor": "Hyxipower",
+}
+
+inversor_auxsol25 = {
+"Fabricante_sigla": "Auxsol ASN-25TL-LV",
+"Entradas": "4",
+"Monitoramento": "SIM – Wireless",
+"Pot_nom_max": "25 kW",
+"Tensao_nom_freq": "360 V - 50/60 Hz",
+"Tensao_max": "800 VCC",
+"Tensao_saida": "220 V",
+"Corrente_max_saida": "72,2 A",
+"Eficiencia_max": "98,60%",
+"axlxp_inv": "568443228 mm",
+"Peso_inv": "35 kg",
+"Nome_inversor": "Auxsol",
+"Link_inversor": "https://www.auxsolcloud.com",
+"App_inversor": "AUXSOL",
+"Imagem_inversor": "Imagens/inversor_auxsol.jpg",
+}
+
+
+
 inversores = [
     inversor_growatt2,
     inversor_growatt225,
@@ -425,6 +499,8 @@ inversores = [
     inversor_solis6k,
     inversor_saj_r6_20k,
     inversor_Hoymiles_1200,
+    inversor_HYX_M1800_S,
+    inversor_auxsol25,
 ]
 
 conn = sqlite3.connect("equipamentos.db")
