@@ -487,6 +487,23 @@ inversor_auxsol25 = {
 "Imagem_inversor": "Imagens/inversor_auxsol.jpg",
 }
 
+inversor_auxsol20 = {
+"Fabricante_sigla": "Auxsol ASN-20TL-LV",
+"Entradas": "4",
+"Monitoramento": "SIM – Wireless",
+"Pot_nom_max": "20 kW",
+"Tensao_nom_freq": "360 V - 50/60 Hz",
+"Tensao_max": "800 VCC",
+"Tensao_saida": "220 V",
+"Corrente_max_saida": "57,7 A",
+"Eficiencia_max": "98,60%",
+"axlxp_inv": "568443228 mm",
+"Peso_inv": "35 kg",
+"Nome_inversor": "Auxsol",
+"Link_inversor": "https://www.auxsolcloud.com",
+"App_inversor": "AUXSOL",
+"Imagem_inversor": "Imagens/inversor_auxsol.jpg",
+}
 
 
 inversores = [
@@ -501,6 +518,7 @@ inversores = [
     inversor_Hoymiles_1200,
     inversor_HYX_M1800_S,
     inversor_auxsol25,
+    inversor_auxsol20,
 ]
 
 conn = sqlite3.connect("equipamentos.db")
