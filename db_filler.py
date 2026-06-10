@@ -538,9 +538,9 @@ inversor_Sungrow_10k = {
     "axlxp_inv": "365 x 525 x 170 mm",
     "Peso_inv": "18,0 kg",
     "Nome_inversor": "Sungrow",
-    "Imagem_inversor": "Imagens/inversor_sungrow10k.jpg",
     "Link_inversor": "http://www.sungrowpower.com",
     "App_inversor": "iSolarCloud",
+    "Imagem_inversor": "Imagens/inversor_sungrow10k.jpg",
 }
 
 inversores = [
