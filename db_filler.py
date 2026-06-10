@@ -274,6 +274,8 @@ gerador_hanersun_600 = {
     "Imagem_gerador": "Imagens/Trina_gerador.jpg"
 }
 
+
+
 modulos = [
     gerador_astronergy,
     gerador_astronergy_600,
@@ -505,6 +507,41 @@ inversor_auxsol20 = {
 "Imagem_inversor": "Imagens/inversor_auxsol.jpg",
 }
 
+inversor_solis25 = {
+    "Fabricante_sigla": "Solis S5-GC25K-LV",
+    "Entradas": "8",
+    "Monitoramento": "SIM – Wireless",
+    "Pot_nom_max": "25 kW",
+    "Tensao_nom_freq": "360 V - 50/60 Hz",
+    "Tensao_max": "1100 VCC",
+    "Tensao_saida": "220 V",
+    "Corrente_max_saida": "72.2 A",
+    "Eficiencia_max": "98.4%",
+    "axlxp_inv": "691*578*338 mm",
+    "Peso_inv": "54.5 kg",
+    "Nome_inversor": "Solis",
+    "Link_inversor": "Não especificado",
+    "App_inversor": "SolisCloud",
+    "Imagem_inversor": "Imagens/inversor_solis_25k.jpg",
+}
+
+inversor_Sungrow_10k = {
+    "Fabricante_sigla": "Sungrow SG10RS-L",
+    "Entradas": "3",
+    "Monitoramento": "SIM – WLAN",
+    "Pot_nom_max": "10,0 kW",
+    "Tensao_nom_freq": "220 V - 50/60 Hz",
+    "Tensao_max": "600 Vcc",
+    "Tensao_saida": "154 - 276 V",
+    "Corrente_max_saida": "45,5 A",
+    "Eficiencia_max": "97,80 %",
+    "axlxp_inv": "365 x 525 x 170 mm",
+    "Peso_inv": "18,0 kg",
+    "Nome_inversor": "Sungrow",
+    "Imagem_inversor": "Imagens/inversor_sungrow10k.jpg",
+    "Link_inversor": "http://www.sungrowpower.com",
+    "App_inversor": "iSolarCloud",
+}
 
 inversores = [
     inversor_growatt2,
@@ -519,6 +556,8 @@ inversores = [
     inversor_HYX_M1800_S,
     inversor_auxsol25,
     inversor_auxsol20,
+    inversor_solis25,
+    inversor_Sungrow_10k,
 ]
 
 conn = sqlite3.connect("equipamentos.db")
