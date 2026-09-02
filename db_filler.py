@@ -1,4 +1,10 @@
 import sqlite3
+from supabase import Client, create_client
+
+project_url = "https://qazntfebzcnavjihhlfj.supabase.co"
+publish_key = "sb_publishable_BUqP92r-OoP3uW5VQ7YyFw_89JUVq5Y"
+
+supabase:Client = create_client(project_url, publish_key)
 
 gerador_astronergy = {
     "Fabricante": "Astronergy",
@@ -242,6 +248,22 @@ gerador_trina_695 = {
     "Imagem_gerador": "Imagens/Trina_gerador.jpg",
 }
 
+gerador_trina_715 = {
+    "Fabricante": "Trina Solar",
+    "SIGLA": "TSM-NEG21C.20",
+    "Tec_construcao": "N-type i-TOPCon Bifacial Dual Glass Monocrystalline",
+    "Garantia": "12 anos",
+    "Pot_max": "715 W",
+    "Eficiencia": "23,0 %",
+    "Tensao_nom": "41,1 V",
+    "Tensao_aberto": "49,2 V",
+    "Corrente_nom": "17,40 A",
+    "Corrente_cc": "18,44 A",
+    "axlxp": "2384 x 1303 x 33 mm",
+    "Peso": "38,3 kg",
+    "Imagem_gerador": "Imagens/Trina_gerador.jpg",
+}
+
 gerador_astronergy_570 = {
     "Fabricante": "Astronergy", # [cite: 1]
     "SIGLA": "CHSM72N(DG)/F-BH-570W", # [cite: 2, 56]
@@ -274,27 +296,129 @@ gerador_hanersun_600 = {
     "Imagem_gerador": "Imagens/Trina_gerador.jpg"
 }
 
+gerador_risen_400 = {
+    "Fabricante": "Risen Energy",
+    "SIGLA": "RSM40-8-400M",
+    "Tec_construcao": "Monocristalino PERC",
+    "Garantia": "12 anos",
+    "Pot_max": "400 W",
+    "Eficiencia": "20,8 %",
+    "Tensao_nom": "34,39 V",
+    "Tensao_aberto": "41,30 V",
+    "Corrente_nom": "11,64 A",
+    "Corrente_cc": "12,34 A",
+    "axlxp": "1754 x 1096 x 30 mm",
+    "Peso": "21,0 kg",
+    "Imagem_gerador": "Imagens/Trina_gerador.jpg"
+}
 
+gerador_maxeon_550 = {
+    "Fabricante": "Maxeon",
+    "SIGLA": "SPR-P6-550-UPP",
+    "Tec_construcao": "Monocristalino PERC Bifacial Framed Glass-Glass",
+    "Garantia": "12 anos",
+    "Pot_max": "550 W",
+    "Eficiencia": "21,1 %",
+    "Tensao_nom": "39,7 V",
+    "Tensao_aberto": "47,1 V",
+    "Corrente_nom": "13,85 A",
+    "Corrente_cc": "14,68 A",
+    "axlxp": "2384 x 1092 x 35 mm",
+    "Peso": "32,4 kg",
+    "Imagem_gerador": "Imagens/Trina_gerador.jpg"
+}
+
+gerador_dah_710 = {
+    "Fabricante": "DAH Solar",
+    "SIGLA": "710W",
+    "Tec_construcao": "N-type TOPCon Bifacial Dual Glass Monocristalino",
+    "Garantia": "15 anos",
+    "Pot_max": "710 W",
+    "Eficiencia": "22,86 %",
+    "Tensao_nom": "40,0 V",
+    "Tensao_aberto": "48,0 V",
+    "Corrente_nom": "17,75 A",
+    "Corrente_cc": "18,48 A",
+    "axlxp": "2384 x 1303 x 33 mm",
+    "Peso": "38,5 kg",
+    "Imagem_gerador": "Imagens/Trina_gerador.jpg",
+}
+
+gerador_tcl_615 = {
+    "Fabricante": "TCL Solar",
+    "SIGLA": "TCL-M1615DT210RP-66NS",
+    "Tec_construcao": "TOPCon Shingled Bifacial Dual Glass",
+    "Garantia": "15 anos",
+    "Pot_max": "615 W",
+    "Eficiencia": "22,8 %",
+    "Tensao_nom": "41,00 V",
+    "Tensao_aberto": "48,30 V",
+    "Corrente_nom": "15,00 A",
+    "Corrente_cc": "15,85 A",
+    "axlxp": "2382 x 1134 x 30 mm",
+    "Peso": "33,2 kg",
+    "Imagem_gerador": "Imagens/Trina_gerador.jpg",
+}
+
+gerador_tcl_620 = {
+    "Fabricante": "TCL Solar",
+    "SIGLA": "HSM-ND66-GR620",
+    "Tec_construcao": "N-Type TOPCon Framed Glass-Glass Bifacial",
+    "Garantia": "25 anos",
+    "Pot_max": "620 W",
+    "Eficiencia": "23,0 %",
+    "Tensao_nom": "40,98 V",
+    "Tensao_aberto": "48,94 V",
+    "Corrente_nom": "15,13 A",
+    "Corrente_cc": "16,05 A",
+    "axlxp": "2382 x 1134 x 30 mm",
+    "Peso": "32,6 kg",
+    "Imagem_gerador": "Imagens/Trina_gerador.jpg",
+}
+
+gerador_astronergy_610 = {
+    "Fabricante": "Astronergy",
+    "SIGLA": "CHSM66RN(DG)/F-BH-610",
+    "Tec_construcao": "N-type TOPCon Bifacial Dual Glass Half-cut",
+    "Garantia": "15 anos",
+    "Pot_max": "610 W",
+    "Eficiencia": "22,6 %",
+    "Tensao_nom": "41,31 V",
+    "Tensao_aberto": "48,74 V",
+    "Corrente_nom": "14,77 A",
+    "Corrente_cc": "15,94 A",
+    "axlxp": "2382 x 1134 x 30 mm",
+    "Peso": "32,8 kg",
+    "Imagem_gerador": "Imagens/Trina_gerador.jpg",
+}
 
 modulos = [
     gerador_astronergy,
+    gerador_astronergy_570,
     gerador_astronergy_600,
+    gerador_astronergy_610,
     gerador_canadian,
+    gerador_dah_710,
     gerador_gokin,
+    gerador_gokin_610,
     gerador_gokin_700,
     gerador_hanersun_585,
-    gerador_hanersun_610,
-    gerador_honor_700,
-    gerador_znshine_700,
-    gerador_gokin_610,
-    gerador_trina_400,
-    gerador_risen_700,
-    gerador_honor_600,
-    gerador_hanersun_700,
-    gerador_osda_610,
-    gerador_trina_695,
-    gerador_astronergy_570,
     gerador_hanersun_600,
+    gerador_hanersun_610,
+    gerador_hanersun_700,
+    gerador_honor_600,
+    gerador_honor_700,
+    gerador_maxeon_550,
+    gerador_osda_610,
+    gerador_risen_400,
+    gerador_risen_700,
+    gerador_tcl_615,
+    gerador_tcl_620,
+    gerador_trina_400,
+    gerador_trina_695,
+    gerador_trina_715,
+    gerador_znshine_700,
+    #
 ]
 
 inversor_growatt2 = {
@@ -543,20 +667,210 @@ inversor_Sungrow_10k = {
     "Imagem_inversor": "Imagens/inversor_sungrow10k.jpg",
 }
 
+inversor_Areswatt_2_5k = {
+    "Fabricante_sigla": "Areswatt AW-MIP2.5",
+    "Entradas": "4",
+    "Monitoramento": "SIM – Wifi & Bluetooth",
+    "Pot_nom_max": "2,5 kW",
+    "Tensao_nom_freq": "220, 230, 240 V - 50/60 Hz",
+    "Tensao_max": "60 Vcc",
+    "Tensao_saida": "180 - 280 V",
+    "Corrente_max_saida": "11,36 A",
+    "Eficiencia_max": "96,50 %",
+    "axlxp_inv": "336 x 274,5 x 43 mm",
+    "Peso_inv": "5,8 kg",
+    "Nome_inversor": "Areswatt",
+    "Link_inversor": "http://www.areswatt.com",
+    "App_inversor": "APP de conexão rápida",
+    "Imagem_inversor": "Imagens/inversor_areswatt.jpg",
+}
+
+inversor_SRNE_3k = {
+    "Fabricante_sigla": "SRNE HF2430S80-H",
+    "Entradas": "1",
+    "Monitoramento": "SIM – USB, CAN, RS485 (WiFi/GPRS)",
+    "Pot_nom_max": "3,3 kW",
+    "Tensao_nom_freq": "220/230 V - 50/60 Hz",
+    "Tensao_max": "500 Vcc",
+    "Tensao_saida": "170 - 280 V",
+    "Corrente_max_saida": "30,0 A",
+    "Eficiencia_max": "95,00 %",
+    "axlxp_inv": "378 x 280 x 103 mm",
+    "Peso_inv": "7,4 kg",
+    "Nome_inversor": "SRNE",
+    "Link_inversor": "http://www.srnesolar.com",
+    "App_inversor": "SRNE Monitoring",
+    "Imagem_inversor": "Imagens/inversor_srne.jpg",
+}
+
+inversor_Growatt_10k = {
+    "Fabricante_sigla": "Growatt MIN 10000TL-X2",
+    "Entradas": "3",
+    "Monitoramento": "SIM – RS485 / USB (WiFi/GPRS/4G/LAN opcional)",
+    "Pot_nom_max": "10,0 kW",
+    "Tensao_nom_freq": "220/230/240 V - 50/60 Hz",
+    "Tensao_max": "600 Vcc",
+    "Tensao_saida": "160 - 300 V",
+    "Corrente_max_saida": "47,7 A",
+    "Eficiencia_max": "98,10 %",
+    "axlxp_inv": "387 x 425 x 180 mm",
+    "Peso_inv": "18,2 kg",
+    "Nome_inversor": "Growatt",
+    "Link_inversor": "http://www.ginverter.com",
+    "App_inversor": "ShinePhone",
+    "Imagem_inversor": "Imagens/inversor_growatt_min.jpg",
+}
+
+inversor_Auxsol_15k = {
+    "Fabricante_sigla": "AUXSOL ASN-15TL-LV",
+    "Entradas": "4",
+    "Monitoramento": "SIM – RS485 (WiFi / 4G opcionais)",
+    "Pot_nom_max": "15,0 kW",
+    "Tensao_nom_freq": "220 V - 50/60 Hz",
+    "Tensao_max": "800 Vcc",
+    "Tensao_saida": "220 V (3/N/PE)",
+    "Corrente_max_saida": "39,4 A",
+    "Eficiencia_max": "98,50 %",
+    "axlxp_inv": "462 x 455 x 214 mm",
+    "Peso_inv": "25,0 kg",
+    "Nome_inversor": "AUXSOL",
+    "Link_inversor": "http://www.auxsol.com",
+    "App_inversor": "Auxsol",
+    "Imagem_inversor": "Imagens/inversor_auxsol_15kw.jpg",
+}
+
+inversor_Hoymiles_2_25k = {
+    "Fabricante_sigla": "Hoymiles HMS-2250DW-4T",
+    "Entradas": "4",
+    "Monitoramento": "SIM – Wi-Fi",
+    "Pot_nom_max": "2,25 kW",
+    "Tensao_nom_freq": "220 V - 60 Hz",
+    "Tensao_max": "65 Vcc",
+    "Tensao_saida": "180 - 275 V",
+    "Corrente_max_saida": "10,23 A",
+    "Eficiencia_max": "96,50 %",
+    "axlxp_inv": "192 x 386 x 45,6 mm",
+    "Peso_inv": "6,0 kg",
+    "Nome_inversor": "Hoymiles",
+    "Link_inversor": "http://www.hoymiles.com",
+    "App_inversor": "S-Miles Cloud",
+    "Imagem_inversor": "Imagens/inversor_hms_2_25kw.jpg",
+}
+
+inversor_Deye_2_25k = {
+    "Fabricante_sigla": "Deye SUN-M225G4-EU-Q0",
+    "Entradas": "4",
+    "Monitoramento": "SIM – WiFi",
+    "Pot_nom_max": "2,25 kW",
+    "Tensao_nom_freq": "220/230 V - 50/60 Hz",
+    "Tensao_max": "60 Vcc",
+    "Tensao_saida": "187 - 253 V",
+    "Corrente_max_saida": "10,0 A",
+    "Eficiencia_max": "96,50 %",
+    "axlxp_inv": "250,5 x 311 x 36,5 mm",
+    "Peso_inv": "5,1 kg",
+    "Nome_inversor": "Deye",
+    "Link_inversor": "http://www.deyeinverter.com",
+    "App_inversor": "Solarman",
+    "Imagem_inversor": "Imagens/inversor_deye_2_25kw.jpg",
+}
+
+inversor_Solax_2_2k = {
+    "Fabricante_sigla": "SolaX X1-Micro 2200",
+    "Entradas": "4",
+    "Monitoramento": "SIM – Wi-Fi",
+    "Pot_nom_max": "2,2 kW",
+    "Tensao_nom_freq": "220, 230, 240 V - 50/60 Hz",
+    "Tensao_max": "60 Vcc",
+    "Tensao_saida": "180 - 275 V",
+    "Corrente_max_saida": "10,00 A",
+    "Eficiencia_max": "96,50 %",
+    "axlxp_inv": "257 x 370 x 43,5 mm",
+    "Peso_inv": "4,7 kg",
+    "Nome_inversor": "SolaX",
+    "Link_inversor": "http://www.solaxpower.com",
+    "App_inversor": "SolaX Cloud",
+    "Imagem_inversor": "Imagens/inversor_solax_x1_2200.png",
+}
+
+inversor_Solplanet_6k = {
+    "Fabricante_sigla": "Solplanet ASW6000-S-G2",
+    "Entradas": "2",
+    "Monitoramento": "SIM – Wi-Fi / RS485 / LAN (4G opcional)",
+    "Pot_nom_max": "6,0 kW",
+    "Tensao_nom_freq": "220, 230, 240 V - 50/60 Hz",
+    "Tensao_max": "600 Vcc",
+    "Tensao_saida": "180 - 295 V",
+    "Corrente_max_saida": "30,0 A",
+    "Eficiencia_max": "98,20 %",
+    "axlxp_inv": "325 x 368 x 145 mm",
+    "Peso_inv": "9,5 kg",
+    "Nome_inversor": "Solplanet",
+    "Link_inversor": "http://www.solplanet.net",
+    "App_inversor": "Solplanet App",
+    "Imagem_inversor": "Imagens/inversor_solplanet_6k.jpg",
+}
+
+inversor_Auxsol_6k = {
+    "Fabricante_sigla": "AUXSOL ASN-6SL-G2",
+    "Entradas": "2",
+    "Monitoramento": "SIM – RS485 / Bluetooth (WiFi / 4G / LAN opcionais)",
+    "Pot_nom_max": "6,0 kW",
+    "Tensao_nom_freq": "220, 230, 240 V - 50/60 Hz",
+    "Tensao_max": "550 Vcc",
+    "Tensao_saida": "160 - 300 V",
+    "Corrente_max_saida": "27,3 A",
+    "Eficiencia_max": "97,50 %",
+    "axlxp_inv": "268 x 330 x 168 mm",
+    "Peso_inv": "7,8 kg",
+    "Nome_inversor": "AUXSOL",
+    "Link_inversor": "http://www.auxsol.com",
+    "App_inversor": "AUXSOL App",
+    "Imagem_inversor": "Imagens/inversor_auxsol_6kw.png",
+}
+
+inversor_Deye_75k = {
+    "Fabricante_sigla": "Deye SUN-75K-G04P3-EU-AM4",
+    "Entradas": "16",
+    "Monitoramento": "SIM – RS485 / RS232 (GPRS / WIFI / Bluetooth / 4G / LAN opcionais)",
+    "Pot_nom_max": "75,0 kW",
+    "Tensao_nom_freq": "220/380 V, 230/400 V - 50/60 Hz",
+    "Tensao_max": "1100 Vcc",
+    "Tensao_saida": "323 - 440 V",
+    "Corrente_max_saida": "125,0 A",
+    "Eficiencia_max": "98,70 %",
+    "axlxp_inv": "613 x 698 x 236,5 mm",
+    "Peso_inv": "53,7 kg",
+    "Nome_inversor": "Deye",
+    "Link_inversor": "http://www.deyeinverter.com",
+    "App_inversor": "Solarman",
+    "Imagem_inversor": "Imagens/inversor_Deye_75kw.png",
+}
+
 inversores = [
+    inversor_Areswatt_2_5k,
+    inversor_Auxsol_15k,
+    inversor_Auxsol_6k,
+    inversor_auxsol20,
+    inversor_auxsol25,
+    inversor_Deye_2_25k,
+    inversor_Deye_75k,
+    inversor_Growatt_10k,
     inversor_growatt2,
     inversor_growatt225,
-    inversor_Sungrow,
     inversor_Hoymiles,
-    inversor_hoymiles_2000,
-    inversor_hyxipower_m2000,
-    inversor_solis6k,
-    inversor_saj_r6_20k,
     inversor_Hoymiles_1200,
+    inversor_Hoymiles_2_25k,
+    inversor_hoymiles_2000,
     inversor_HYX_M1800_S,
-    inversor_auxsol25,
-    inversor_auxsol20,
+    inversor_hyxipower_m2000,
+    inversor_saj_r6_20k,
+    inversor_Solax_2_2k,
     inversor_solis25,
+    inversor_solis6k,
+    inversor_Solplanet_6k,
+    inversor_SRNE_3k,
+    inversor_Sungrow,
     inversor_Sungrow_10k,
 ]
 
@@ -613,3 +927,47 @@ for inv in inversores:
 
 conn.commit()
 conn.close()
+
+for inv in inversores:
+    dados_inversores_supabase={
+
+        "Fabricante_sigla": inv["Fabricante_sigla"],
+        "Entradas": inv["Entradas"],
+        "Monitoramento": inv["Monitoramento"],
+        "Pot_nom_max": inv["Pot_nom_max"],
+        "Tensao_nom_freq": inv["Tensao_nom_freq"],
+        "Tensao_max": inv["Tensao_max"],
+        "Tensao_saida": inv["Tensao_saida"],
+        "Corrente_max_saida": inv["Corrente_max_saida"],
+        "Eficiencia_max": inv["Eficiencia_max"],
+        "axlxp_inv": inv["axlxp_inv"],
+        "Peso_inv": inv["Peso_inv"],
+        "Nome_inversor": inv["Nome_inversor"],
+        "Link_inversor": inv["Link_inversor"],
+        "App_inversor": inv["App_inversor"],
+        "Imagem_inversor": inv["Imagem_inversor"], 
+    }
+
+    supabase.table("Inversores").insert(dados_inversores_supabase).execute()
+
+
+for mod in modulos:
+    dados_modulos_supabase={
+
+        "Fabricante":mod["Fabricante"],
+        "SIGLA": mod["SIGLA"],
+        "Tec_construcao": mod["Tec_construcao"],
+        "Garantia": mod["Garantia"],
+        "Pot_max": mod["Pot_max"],
+        "Eficiencia": mod["Eficiencia"],
+        "Tensao_nom": mod["Tensao_nom"],
+        "Tensao_aberto": mod["Tensao_aberto"],
+        "Corrente_nom": mod["Corrente_nom"],
+        "Corrente_cc": mod["Corrente_cc"],
+        "axlxp": mod["axlxp"],
+        "Peso": mod["Peso"],
+        "Imagem_gerador": mod["Imagem_gerador"],
+    }
+
+    supabase.table("Modulos").insert(dados_modulos_supabase).execute()
+     
