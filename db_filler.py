@@ -392,12 +392,95 @@ gerador_astronergy_610 = {
     "Imagem_gerador": "Imagens/Trina_gerador.jpg",
 }
 
+gerador_astronergy_715 = {
+    "Fabricante": "Astronergy",
+    "SIGLA": "CHSM66N(DG)/F-BH-715",
+    "Tec_construcao": "n-type TOPCon 4.0 Bifacial Dual Glass Monocristalino",
+    "Garantia": "15 anos",
+    "Pot_max": "715 W",
+    "Eficiencia": "23,0 %",
+    "Tensao_nom": "40,65 V",
+    "Tensao_aberto": "48,97 V",
+    "Corrente_nom": "17,59 A",
+    "Corrente_cc": "18,53 A",
+    "axlxp": "2384 x 1303 x 33 mm",
+    "Peso": "38,0 kg",
+    "Imagem_gerador": "Imagens/Trina_gerador.jpg",
+}
+
+gerador_tsun_630 = {
+    "Fabricante": "TSUN",
+    "SIGLA": "RIO630W-132BIF-2384",
+    "Tec_construcao": "N-type Mono-crystalline Bifacial Dual Glass",
+    "Garantia": "12 anos",
+    "Pot_max": "630 W",
+    "Eficiencia": "23,3 %",
+    "Tensao_nom": "41,02 V",
+    "Tensao_aberto": "49,48 V",
+    "Corrente_nom": "15,36 A",
+    "Corrente_cc": "16,20 A",
+    "axlxp": "2384 x 1134 x 30 mm",
+    "Peso": "33,3 kg",
+    "Imagem_gerador": "Imagens/Trina_gerador.jpg",
+}
+
+gerador_astronergy_700 = {
+    "Fabricante": "Astronergy",
+    "SIGLA": "CHSM66N(DG)/F-BH-700",
+    "Tec_construcao": "n-type TOPCon 4.0 Bifacial Dual Glass Monocristalino",
+    "Garantia": "15 anos",
+    "Pot_max": "700 W",
+    "Eficiencia": "22,5 %",
+    "Tensao_nom": "40,15 V",
+    "Tensao_aberto": "48,37 V",
+    "Corrente_nom": "17,44 A",
+    "Corrente_cc": "18,38 A",
+    "axlxp": "2384 x 1303 x 33 mm",
+    "Peso": "38,0 kg",
+    "Imagem_gerador": "Imagens/Trina_gerador.jpg",
+}
+
+gerador_canadian_715 = {
+    "Fabricante": "Canadian Solar",
+    "SIGLA": "CS7N-715TB-AG",
+    "Tec_construcao": "TOPCon Bifacial N-type Dual Glass",
+    "Garantia": "12 anos",
+    "Pot_max": "715 W",
+    "Eficiencia": "23,0 %",
+    "Tensao_nom": "40,6 V",
+    "Tensao_aberto": "48,5 V",
+    "Corrente_nom": "17,63 A",
+    "Corrente_cc": "18,64 A",
+    "axlxp": "2384 x 1303 x 35 mm",
+    "Peso": "37,9 kg",
+    "Imagem_gerador": "Imagens/Trina_gerador.jpg",
+}
+
+gerador_honor_610 = {
+    "Fabricante": "Honor Solar",
+    "SIGLA": "HN-610-132N",
+    "Tec_construcao": "N-Type TOPCon Bifacial Dual Glass",
+    "Garantia": "15 anos",
+    "Pot_max": "610 W",
+    "Eficiencia": "22,6 %",
+    "Tensao_nom": "41,30 V",
+    "Tensao_aberto": "48,70 V",
+    "Corrente_nom": "14,77 A",
+    "Corrente_cc": "15,90 A",
+    "axlxp": "2382 x 1134 x 30 mm",
+    "Peso": "32,5 kg",
+    "Imagem_gerador": "Imagens/Trina_gerador.jpg",
+}
+
 modulos = [
     gerador_astronergy,
     gerador_astronergy_570,
     gerador_astronergy_600,
     gerador_astronergy_610,
+    gerador_astronergy_700,
+    gerador_astronergy_715,
     gerador_canadian,
+    gerador_canadian_715,
     gerador_dah_710,
     gerador_gokin,
     gerador_gokin_610,
@@ -407,6 +490,7 @@ modulos = [
     gerador_hanersun_610,
     gerador_hanersun_700,
     gerador_honor_600,
+    gerador_honor_610,
     gerador_honor_700,
     gerador_maxeon_550,
     gerador_osda_610,
@@ -418,6 +502,7 @@ modulos = [
     gerador_trina_695,
     gerador_trina_715,
     gerador_znshine_700,
+    gerador_tsun_630,
     #
 ]
 
@@ -927,6 +1012,9 @@ for inv in inversores:
 
 conn.commit()
 conn.close()
+
+supabase.table("Inversores").delete().neq("id", 0).execute()
+supabase.table("Modulos").delete().neq("id", 0).execute()
 
 for inv in inversores:
     dados_inversores_supabase={
