@@ -6,6 +6,7 @@ import io
 from docxtpl import DocxTemplate, InlineImage
 from docx.shared import Cm
 import sqlite3
+from geracao_estimada import gerar_grafico
 
 rotulos = [
     "CEP",
@@ -204,15 +205,28 @@ if arquivo_pdf:
     dicionario["Total_energia"] = round(total_energia, 2)
     dicionario["Total_arredondado"] = 10 * math.ceil(total_energia / 10)
 
+    imagem_grafico, tabela_dados = gerar_grafico(latitude_decimal, longitude_decimal, dicionario['Qtd_inv'], dicionario['Qtd_mod'], dicionario['Pot_nom_max']*1000, dicionario['Pot_max'])
+
     if st.button("Gerar Memorial Word"):
         try:
+            # 1. Gera o gráfico nos bastidores (substitua pelas suas variáveis de tela)
+            buffer_grafico, _ = gerar_grafico(latitude, longitude, qtd_inversores, qtd_placas, pot_inv, pot_mod)
+            
             doc = DocxTemplate("Memorial Descritivo - Template.docx")
+            
+            # 2. Injeta o gráfico virtual no dicionário
+            dicionario["grafico_geracao"] = InlineImage(
+                doc, buffer_grafico, width=Cm(14.0) # Ajuste a largura pro tamanho da sua folha
+            )
+            
+            # (Mantém as suas imagens originais)
             dicionario["imagem_gerador"] = InlineImage(
                 doc, resultado_mod['Imagem_gerador'], width=Cm(4.0)
             )
             dicionario["imagem_inversor"] = InlineImage(
                 doc, resultado_inv['Imagem_inversor'], width=Cm(3.5)
             )
+            
             doc.render(dicionario)
 
             output_stream = io.BytesIO()
