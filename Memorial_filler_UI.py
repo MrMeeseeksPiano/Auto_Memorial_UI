@@ -6,6 +6,7 @@ import io
 from docxtpl import DocxTemplate, InlineImage
 from docx.shared import Cm
 import sqlite3
+from geracao_estimada import gerar_grafico
 
 rotulos = [
     "CEP",
@@ -16,6 +17,7 @@ rotulos = [
     "Qtd_mod",
     "Qtd_inv",
     "Pot_nom",
+    "Pot_inv",
 ]
 rotulos_pdf = [
     "CEP da UC com GD",
@@ -26,6 +28,7 @@ rotulos_pdf = [
     "Quantidade de Módulos",
     "Quantidade de Inversores",
     "Potência Total dos Módulos \(kW\)",
+    "Potência Total dos Inversores \(kW\)",
 ]
 energia_mensal = {
     "Energia_jan": 0,
@@ -204,15 +207,48 @@ if arquivo_pdf:
     dicionario["Total_energia"] = round(total_energia, 2)
     dicionario["Total_arredondado"] = 10 * math.ceil(total_energia / 10)
 
+    pot_inv_total_watts = float(dicionario['Pot_inv'].replace(',', '.')) * 1000
+    pot_inv_unitario = pot_inv_total_watts / int(dicionario['Qtd_inv'])
+    pot_mod_watts = dicionario['Pot_max_valor'] * 1000
+
     if st.button("Gerar Memorial Word"):
         try:
+            # 1. Gera o gráfico nos bastidores (substitua pelas suas variáveis de tela)
+            buffer_grafico, tabela = gerar_grafico(latitude_decimal, longitude_decimal, int(dicionario['Qtd_inv']), Qtd_mod_var, pot_inv_unitario, pot_mod_watts)
+
+            valores = tabela['Geração Estimada (kWh)'].tolist()
+        
+            dicionario['geracao_jan'] = valores[0]
+            dicionario['geracao_fev'] = valores[1]
+            dicionario['geracao_mar'] = valores[2]
+            dicionario['geracao_abr'] = valores[3]
+            dicionario['geracao_mai'] = valores[4]
+            dicionario['geracao_jun'] = valores[5]
+            dicionario['geracao_jul'] = valores[6]
+            dicionario['geracao_ago'] = valores[7]
+            dicionario['geracao_set'] = valores[8]
+            dicionario['geracao_out'] = valores[9]
+            dicionario['geracao_nov'] = valores[10]
+            dicionario['geracao_dez'] = valores[11]
+
+            dicionario['geracao_total'] = sum(valores)
+            dicionario['geracao_media'] = int(sum(valores) / 12)
+
             doc = DocxTemplate("Memorial Descritivo - Template.docx")
+            
+            # 2. Injeta o gráfico virtual no dicionário
+            dicionario["grafico_geracao"] = InlineImage(
+                doc, buffer_grafico, width=Cm(12.0) # Ajuste a largura pro tamanho da sua folha
+            )
+            
+            # (Mantém as suas imagens originais)
             dicionario["imagem_gerador"] = InlineImage(
                 doc, resultado_mod['Imagem_gerador'], width=Cm(4.0)
             )
             dicionario["imagem_inversor"] = InlineImage(
                 doc, resultado_inv['Imagem_inversor'], width=Cm(3.5)
             )
+            
             doc.render(dicionario)
 
             output_stream = io.BytesIO()
