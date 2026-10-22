@@ -2,3 +2,6 @@ streamlit
 pdfplumber
 docxtpl
 python-docx
+pandas
+pvlib
+matplotlib 
