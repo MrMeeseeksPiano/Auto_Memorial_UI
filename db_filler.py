@@ -472,11 +472,28 @@ gerador_honor_610 = {
     "Imagem_gerador": "Imagens/Trina_gerador.jpg",
 }
 
+gerador_astronergy_615 = {
+    "Fabricante": "Astronergy",
+    "SIGLA": "CHSM66RN(DG)/F-BH-615",
+    "Tec_construcao": "n-type TOPCon Bifacial Dual Glass Monocristalino",
+    "Garantia": "15 anos",
+    "Pot_max": "615 W",
+    "Eficiencia": "22,8 %",
+    "Tensao_nom": "41,43 V",
+    "Tensao_aberto": "48,89 V",
+    "Corrente_nom": "14,84 A",
+    "Corrente_cc": "16,02 A",
+    "axlxp": "2382 x 1134 x 30 mm",
+    "Peso": "31,65 kg",
+    "Imagem_gerador": "Imagens/Trina_gerador.jpg",
+}
+
 modulos = [
     gerador_astronergy,
     gerador_astronergy_570,
     gerador_astronergy_600,
     gerador_astronergy_610,
+    gerador_astronergy_615,
     gerador_astronergy_700,
     gerador_astronergy_715,
     gerador_canadian,
@@ -932,6 +949,24 @@ inversor_Deye_75k = {
     "Imagem_inversor": "Imagens/inversor_Deye_75kw.png",
 }
 
+inversor_enphase_iq8p = {
+    "Fabricante_sigla": "Enphase IQ8P-72-2-BR",
+    "Entradas": "1",
+    "Monitoramento": "SIM – PLC via IQ Gateway (Wi-Fi / Ethernet / Celular)",
+    "Pot_nom_max": "0,475 kW",
+    "Tensao_nom_freq": "220 / 240 V - 60 Hz",
+    "Tensao_max": "65 Vcc",
+    "Tensao_saida": "176 - 269 V",
+    "Corrente_max_saida": "2,16 A",
+    "Eficiencia_max": "97,30 %",
+    "axlxp_inv": "263,5 x 196,3 x 36,1 mm",
+    "Peso_inv": "1,6 kg",
+    "Nome_inversor": "Enphase",
+    "Link_inversor": "https://enphase.com/pt-br",
+    "App_inversor": "Enphase App",
+    "Imagem_inversor": "Imagens/inversor_enphase_475w.jpg",
+}
+
 inversores = [
     inversor_Areswatt_2_5k,
     inversor_Auxsol_15k,
@@ -940,6 +975,7 @@ inversores = [
     inversor_auxsol25,
     inversor_Deye_2_25k,
     inversor_Deye_75k,
+    inversor_enphase_iq8p,
     inversor_Growatt_10k,
     inversor_growatt2,
     inversor_growatt225,
